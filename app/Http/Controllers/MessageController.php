@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Message;
-
+use App\Http\Requests\RegisterRequest; 
 
 class MessageController extends Controller
 {
@@ -16,11 +16,7 @@ class MessageController extends Controller
         return view('message.index', compact('messages'));
     }
 
-    public function post(Request $request) : RedirectResponse {
-        $request->validate([
-            'name' => ['required', 'string', 'max:50', 'min:2'],
-            'description' => ['required', 'string', 'max:500', 'min:2'],
-        ]);
+    public function post(RegisterRequest $request) : RedirectResponse {
     
         Message::create([
             'name' => $request->name,

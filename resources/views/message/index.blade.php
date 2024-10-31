@@ -132,11 +132,6 @@
     </label><br>
     <input type="submit" value="投稿する">
 </form>
-    <div class="message">
-        <h3>メッセージID: 1</h3>
-        <p>初めての投稿で緊張しています。</p>
-        <p class="meta">by 山田太郎 on 2024/10/22 11:53:03</p>
-    </div>
     @foreach ($messages as $message)
         <div class="message">
             <h3>メッセージID: {{$message->id}}</h3>
