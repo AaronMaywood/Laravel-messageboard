@@ -135,7 +135,7 @@
     @foreach ($messages as $message)
         <div class="message">
             <h3>メッセージID: {{$message->id}}</h3>
-            <p>{{ $message->description }}</p>
+            <p>{!! nl2br(e($message->description)) !!}</p>
             <p class="meta">by {{$message->name}} on {{$message->created_at}}</p>
         </div>
     @endforeach
