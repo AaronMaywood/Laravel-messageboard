@@ -18,9 +18,10 @@
         .session {
             max-width: 600px;
             border-radius: 3px;
-            border: 1px solid blue;
+            border: 1px solid green;
             margin: 0 auto;
             padding: 0.5em;
+            background: lightgoldenrodyellow;
         }
         form {
             max-width: 600px;
@@ -71,7 +72,6 @@
             font-size: 12px;
             color: #666;
         }
-        
         .pagination {
             display: flex;
             padding-left: 0;
@@ -121,7 +121,7 @@
 <h1>メッセージボード</h1>
 
 <form method="post" action="./">
-@csrf
+    @csrf
     <label>
         名前：<input type="text" name="name" id="name" required>
         <x-input-error :messages="$errors->get('name')" />
